@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			window.onload = function(){
+				scripts = document.getElementsByTagName("script");
+				document.getElementsByTagName("pre")[0].innerHTML = scripts[scripts.length - 1].innerHTML;
+			};
+		</script>
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<a href="index.html">Home</a>
+		<h3>Transitions</h3>
+		<a href="http://d3js.org/#transformation">From the D3 Documentation:</a> "D3 is not a new graphical representation. Unlike Processing, Raphael, or Protovis, the vocabulary of marks comes directly from web standards: HTML, SVG (Scalable Vector Graphics) and CSS. For example, you can create SVG elements using D3 and style them with external stylesheets. You can use composite filter effects, dashed strokes and clipping. If browser vendors introduce new features tomorrow, you'll be able to use them immediately - no toolkit update required. And, if you decide in the future to use a toolkit other than D3, you can take your knowledge of standards with you!"<br><br>
+		The first argument <em>d</em> in the functions below is the DOM object in the DOM query being iterated over.  The second argument <em>i</em> is the index of the DOM object; we can use it to give elements unique style.
+		<h3>Example:</h3>
+		<p>100px left margin</p>
+		<p>130px left margin</p>
+		<p>160px left margin</p>
+		<p>190px left margin</p>
+		<code><pre>
+d3.selectAll("p").transition()
+	    .duration(750)
+	    .delay(function(d, i) { return i * 10; })
+	    .style("margin-left", function(d,i) { return (100+30*i)+"px"; });
+		</pre></code>
+		<button onclick="applyD3Selectors()">Slide Those Margins Over</button><br>
+		<a href="data.html">Data Driven</a> - <a href="svg.html">SVG</a>
+<script>
+d3.selectAll("p").style("color", "white");
+d3.selectAll("p").style("background-color", "black");
+d3.selectAll("p").style("width", "200px");
+
+function applyD3Selectors(){
+	d3.selectAll("p").transition()
+	    .duration(7500)
+	    .delay(function(d, i) { return i * 2000; })
+	    .style("margin-left", function(d,i) { return (100+30*i)+"px"; });
+}
+</script>
+	</body>
+</html>

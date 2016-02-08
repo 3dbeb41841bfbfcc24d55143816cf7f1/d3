@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			window.onload = function(){
+				scripts = document.getElementsByTagName("script");
+				document.getElementsByTagName("pre")[0].innerHTML = scripts[scripts.length - 1].innerHTML;
+			};
+		</script>
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<a href="index.html">Home</a>
+		<h3>D3, SVG, Transitions</h3>
+		Putting it together:
+		<h3>Example:</h3>
+		<svg width="400" height="160">
+			
+		</svg>
+		<code><pre>
+		</pre></code>
+		<button onclick="applyD3Selectors()">Magic Circles Time</button><br>
+		<a href="svg.html">SVG</a> - <a href="index.html">Home</a>
+<script>
+function applyD3Selectors(){
+	var dataset = [ 40, 60, 80, 60, 40 ];
+	var svg = d3.select('svg');
+	var circles = svg.selectAll("circle")
+    	.data(dataset)
+    	.enter()
+    	.append("circle");
+
+
+    circles.attr("fill", function() {
+		return "rgba(" + Math.round(Math.random() * 255) + "," + Math.round(Math.random() * 255) + "," + Math.round(Math.random() * 255) + ","+Math.random()+")";
+		});
+
+    circles.attr("cx", function(d, i) {
+            return (i * 80) + 40;
+        })
+
+       .attr("cy", 80)
+       .transition()
+       .duration(500)
+       .delay(function(d, i){ return i * 100; })
+
+       .attr("r", 150).transition()
+       .duration(750)
+
+       .attr("r", function(d){
+            return d;
+       })
+
+       .attr("r", d).transition()
+       .duration(750)
+
+       .attr("r", function(d){
+            return 0;
+       })
+
+       ;
+
+}
+</script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      window.onload = function(){
+        scripts = document.getElementsByTagName("script");
+        document.getElementsByTagName("pre")[0].innerHTML = scripts[scripts.length - 1].innerHTML;
+      };
+    </script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <a href="index.html">Home</a>
+    <h3>Data Driven</h3>
+    The core purpose of D3 is to visualize data, and we can pull that in to manipulate the DOM.<br><br>
+    <a href="http://d3js.org/#properties">From the D3 Documentation:</a> Computed properties often refer to bound data. Data is specified as an array of values, and each value is passed as the first argument (<em>d</em>) to selection functions. With the default join-by-index, the first element in the data array is passed to the first node in the selection, the second element to the second node, and so on.
+    <h3>Example:</h3>
+    <p>100</p>
+    <p>200</p>
+    <p>300</p>
+    <p>400</p>
+    <p>500</p>
+    <p>600</p>
+    <code><pre>
+    </pre></code>
+    <button onclick="applyD3Selectors()">Match Bar Lengths to Values</button><br>
+    <a href="dynamic-properties.html">Dynamic Properties</a> - <a href="dataJson.html">External Data Driven</a>
+<script>
+d3.selectAll("p").style("color", "white");
+d3.selectAll("p").style("background-color", "black");
+
+function applyD3Selectors(){
+  var barLength = [500, 200, 300, 400, 500, 600];
+  d3.selectAll("p")
+      .data(barLength)
+      .style("width", function(d) { return d + "px"; });
+  }
+</script>
+
+  </body>
+</html>

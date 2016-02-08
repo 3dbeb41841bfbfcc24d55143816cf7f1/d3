@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			window.onload = function(){
+				scripts = document.getElementsByTagName("script");
+				document.getElementsByTagName("pre")[0].innerHTML = scripts[scripts.length - 1].innerHTML;
+			};
+		</script>
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<a href="index.html">Home</a>
+		<h3>Dynamic Properties</h3>
+		The values can be dynamic. That lets us set CSS properties using algorithms, API data, etc.
+		<h3>Example:</h3>
+		<p>One</p>
+		<p>Two</p>
+		<p>Three</p>
+		<p>Four</p>
+		<code><pre>
+		</pre></code>
+		<button onclick="applyD3Intervals()">Set Intervals With D3</button><button onclick="applyD3Colors()">Set Colors With D3</button><br>
+		<a href="selection.html">Selection</a> - <a href="data.html">Data Driven</a>
+<script>
+d3.selectAll("p").style("color", "white");
+d3.selectAll("p").style("background-color", "black"); 
+function applyD3Intervals(){
+	setInterval(function(){
+		d3.selectAll("p").style("width", function() {
+		  return (Math.random()*15 + 100)+"px";
+		});
+	},200);
+}
+function applyD3Colors(){
+	d3.selectAll("p").style("background-color", function() {
+  		return "hsl(" + Math.random() * 360 + ",100%,50%)";
+	});
+}
+</script>
+	</body>
+</html>

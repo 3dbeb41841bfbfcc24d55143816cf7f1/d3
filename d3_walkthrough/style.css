@@ -1,0 +1,25 @@
+body { 
+font-family: helvetica;
+}
+
+p {
+	padding: 5px;
+}
+
+pre{
+	padding:10px;
+	border: 1px solid #dddddd;
+}
+
+button{
+	margin:10px;
+}
+
+
+svg {
+	border: 2px solid red;
+}
+
+h3 { 
+font-family: helvetica;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      window.onload = function(){
+        scripts = document.getElementsByTagName("script");
+        document.getElementsByTagName("pre")[0].innerHTML = scripts[scripts.length - 1].innerHTML;
+      };
+    </script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <a href="index.html">Home</a>
+    <h3>Data Driven</h3>
+    
+    <a href="https://github.com/mbostock/d3/wiki/Requests">From the D3 Wiki:</a> We can also pull in data from an API.
+    <ol>
+      <li>Let's add some JSON data to an external file called myData.json</li>
+      <li>Let's remove the numbers from the p tags</li>
+      <li>We need to start our server to avoid any CORS errors: <strong>python -m SimpleHTTPServer 8080</strong>. This will start a simple Python server that already exists on your machine.</li>
+      <li>Also, you may need to use your CORS Chrome extension to avoid errors.</li>
+    </ol>
+    <em>Notice the code we placed on the button so the function fires only once.</em>
+
+    <h3>Example:</h3>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <code><pre>
+    </pre></code>
+    <button onclick="applyD3Selectors(); this.onclick=null;">Match Bar Lengths to Values</button><br>
+    <a href="data.html">Data</a> - <a href="transitions.html">Transitions</a>
+<script>
+d3.selectAll("p").style("color", "white");
+d3.selectAll("p").style("background-color", "black");
+d3.selectAll("p").style("height", "30px");
+
+
+//with external JSON file
+function applyD3Selectors(){
+d3.json("http://draft-assist.herokuapp.com/api/players", function(data){
+  console.log(data);
+  d3.selectAll("p")
+     .data(data)
+     .style("width", function(d) { return d.reYds + "px"; })
+     .style("background-color", "green")
+     .append("p")
+        .style("fill", "white")
+        .style("font-size", ".5em")
+        .text( function(d){ return d.name + " -- Receiving: " + d.reYds  })
+        .style("margin-top", "1px" )
+    })
+}
+</script>
+
+  </body>
+</html>

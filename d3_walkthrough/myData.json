@@ -1,0 +1,8 @@
+[
+  {"name": "Netflix", "price": 500},
+  {"name": "Apple", "price":200},
+  {"name": "Baba", "price": 300},
+  {"name": "Google", "price": 400},
+  {"name": "FitBit", "price": 500},
+  {"name": "Nike", "price": 600}
+]

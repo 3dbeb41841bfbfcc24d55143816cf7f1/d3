@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			window.onload = function(){
+				scripts = document.getElementsByTagName("script");
+				document.getElementsByTagName("pre")[0].innerHTML = scripts[scripts.length - 1].innerHTML;
+			};
+		</script>
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<a href="index.html">Home</a>
+		<h3>Data Driven</h3>
+		We can also pull in data from an external data source to manipulate the DOM.<br><br>
+		<a href="https://github.com/mbostock/d3/wiki/Requests">From the D3 Wiki:</a> We can pull in data from a .json file using d3.json or a .csv file by using d3.csv.
+		<ol>
+			<li>Let's add some JSON data to an external file called myData.json</li>
+			<li>Let's remove the numbers from the p tags</li>
+			<li>We need to start our server to avoid any CORS errors: <strong>python -m SimpleHTTPServer 8080</strong>. This will start a simple Python server that already exists on your machine.</li>
+		</ol>
+		<em>Notice the code we placed on the button so the function fires only once.</em>
+
+		<h3>Example:</h3>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<code><pre>
+		</pre></code>
+		<button onclick="applyD3Selectors(); this.onclick=null;">Match Bar Lengths to Values</button><br>
+		<a href="data.html">Data</a> - <a href="dataJsonAPI.html">Data JSON API</a>
+<script>
+d3.selectAll("p").style("color", "white");
+d3.selectAll("p").style("background-color", "black");
+d3.selectAll("p").style("height", "30px");
+
+
+//with external JSON file
+function applyD3Selectors(){
+d3.json("myData.json", function(data){
+	console.log(data);
+	d3.selectAll("p")
+	   .data(data)
+	   .style("width", function(d) { return d.price + "px"; })
+	   .style("background-color", "green")
+	   .append("p")
+				.style("fill", "white")
+				.text( function(d){ return d.name + "- $" + d.price  })
+				.style("margin-top", "2px" )
+		})
+}
+</script>
+
+	</body>
+</html>

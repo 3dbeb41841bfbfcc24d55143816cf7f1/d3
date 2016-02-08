@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<a href="index.html">Home</a>
+		<h3>Selection</h3>
+		With D3 we select nodes using standard <a href="http://www.w3.org/TR/selectors-api/">W3C Selectors API</a>
+		<h3>Example:</h3>
+		<p>One</p>
+		<p>Two</p>
+		<p>Three</p>
+		<p>Four</p>
+		<strong>HTML</strong>
+		<code><pre>
+&lt;p&gt;One&lt;/p&gt;
+&lt;p&gt;Two&lt;/p&gt;
+&lt;p&gt;Three&lt;/p&gt;
+&lt;p&gt;Four&lt;/p&gt;
+		</pre></code>
+<strong>JavaScript</strong>
+		<code><pre>
+function applyD3Selectors(){
+	d3.selectAll("p").style("color", "white");
+	d3.selectAll("p").style("background-color", "black");
+}
+		</pre></code>
+		<button onclick="applyD3Selectors()">Select and Style With D3</button><br>
+		<a href="index.html">Home</a> - <a href="dynamic-properties.html">Dynamic Properties</a>
+		<script>
+			function applyD3Selectors(){
+				d3.selectAll("p").style("color", "white");
+				d3.selectAll("p").style("background-color", "black");
+			}
+		</script>
+	</body>
+</html>
