@@ -6,7 +6,7 @@
 - [D3.js](http://d3js.org/)
 - [Mike's site](http://bost.ocks.org/mike/)
 - [Bézier Curves](http://www.jasondavies.com/animated-bezier/)
-- [D3 Tree](*http://animateddata.co.uk/lab/d3-tree/)
+- [D3 Tree](http://animateddata.co.uk/lab/d3-tree/)
 - [D3 Tetris](http://d3tetris.herokuapp.com/)
 
 ##What we're going to do today:
