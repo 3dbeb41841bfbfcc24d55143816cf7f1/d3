@@ -8,13 +8,12 @@
 - [Bézier Curves](http://www.jasondavies.com/animated-bezier/)
 - [D3 Tree](http://animateddata.co.uk/lab/d3-tree/)
 - [D3 Tetris](http://d3tetris.herokuapp.com/)
+- [D3 Wiki](https://github.com/mbostock/d3/wiki)
 
 ##What we're going to do today:
 
 ###Lesson time:
 
-- Relax. It's been a long week.
-- Stay off the Rails for now (D3 comes in via JavaScript, so it's not important to use it in an exclusively Rails context -- you can fold it into your project very easily later!)
 - Talk about why and when D3 can be useful
 - [Walk through](./d3_walkthrough/template.html) some basic D3
 - Inspect elements and change things around
@@ -28,14 +27,14 @@
 	- Try making a Venn diagram. 
 	- Try using JSON data instead of an array to populate a dataset (hint: this is what you'll need to do if you choose to use D3 in your Project 3!).
 - If you need a little kick start, Mike Bostock has collected a [wide range of tutorials](https://github.com/mbostock/d3/wiki/Tutorials) on his wiki.
-- Need guidance about using D3 in your Rails app? Come talk to us. (Hint: you may not need it for Project 3, but it's a super way to spiff up your Project 4)
+
 
 ###More:
 
 - D3 is a powerful library with tons of potential (its creator uses it at his day job to create super spiffy infographics, and many other developers use it to communicate information in novel or more expressive manners).
 - We'll be coming back to this during weeks 10-12 as an advanced topic. There's a lot you can do with complex graphs, mathematical structures, and maps!
-- Play around in the [documentation](https://github.com/mbostock/d3/wiki) if you'd like to learn more; we'd love to see some Project 3s and Project 4s with D3! 
-- You'll be getting a bunch of neato D3 stuff in this week's email newsletter :)
+- Play around in the [documentation](https://github.com/mbostock/d3/wiki) if you'd like to learn more; we'd love to see some Project 4s with D3! 
+
 
 ##Lesson Walk-Thru
 
