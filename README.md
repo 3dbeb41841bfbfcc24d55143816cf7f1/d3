@@ -15,7 +15,7 @@
 ###Lesson time:
 
 - Talk about why and when D3 can be useful
-- [Walk through](./d3_walkthrough/template.html) some basic D3
+- [Walk through](http://biographer-frank-72827.bitballoon.com/) some basic D3
 - Inspect elements and change things around
 
 ###Lab time: 
